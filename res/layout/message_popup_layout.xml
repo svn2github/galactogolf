@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_height="wrap_content" android:orientation="vertical" android:padding="10px" android:layout_width="fill_parent">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/message_popup_title_label" android:text="Message Title" android:textSize="10pt"></TextView><TextView android:layout_height="wrap_content" android:text="Body text, blah blah" android:id="@+id/message_popup_body_label" android:padding="5px" android:layout_width="wrap_content"></TextView>
+<Button android:layout_height="wrap_content" android:text="@string/message_popup_ok_button" android:layout_width="fill_parent" android:id="@+id/message_popup_ok_button"  android:background="@drawable/selector" android:layout_gravity="center"></Button>
+
+
+</LinearLayout>

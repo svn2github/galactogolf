@@ -1,0 +1,234 @@
+{
+  "id": "ed308e23-5cde-4647-baa6-e262e2fe9241",
+  "levels": [
+    {
+        	"par":1,
+      "player": {
+        "position": [
+          [
+            0,
+            160
+          ]
+        ],
+        "type": "Player",
+        "name": "Player"
+      },
+      "npcs": [
+        {
+          "position": [
+            [
+              0,
+              -182.58546447753906
+            ]
+          ],
+          "type": "Wormhole",
+          "name": "Wormhole"
+        }
+      ],
+      "name": "Welcome to Galacto Golf!",
+	  "description":"Press and pull back on your rocket to launch it towards the Wormhole.\n\nIf you need to try again, press the reset button on the bottom right\n"
+    },
+    {
+        	"par":2,
+    
+      "player": {
+        "position": [
+          [
+            8.954437255859375,
+            160.45938110351563
+          ]
+        ],
+        "type": "Player",
+        "name": "Player"
+      },
+      "npcs": [
+        {
+          "position": [
+            [
+              11.476837158203125,
+              -68.610626220703125
+            ]
+          ],
+          "type": "Planet",
+          "name": "Planet"
+        },
+        {
+          "position": [
+            [
+              8.323837280273438,
+              -330.75836181640625
+            ]
+          ],
+          "type": "Wormhole",
+          "name": "Wormhole"
+        }
+      ],
+      "name": "Use the force! (of gravity)",
+	  "description":"Planets have gravity, use it to plot your orbit to the wormhole!"
+
+    },
+        {
+            	"par":2,
+      "player": {
+        "position": [
+          [
+            8.954437255859375,
+            160.45938110351563
+          ]
+        ],
+        "type": "Player",
+        "name": "Player"
+      },
+      "npcs": [
+        {
+          "position": [
+            [
+              11.476837158203125,
+              -78.610626220703125
+            ]
+          ],
+          "type": "Planet",
+          "name": "Planet"
+        },
+        {
+          "position": [
+            [
+              180.476837158203125,
+              -78.610626220703125
+            ]
+          ],
+          "type": "Star",
+          "name": "Star"
+        },
+        {
+          "position": [
+            [
+              8.323837280273438,
+              -334.75836181640625
+            ]
+          ],
+          "type": "Wormhole",
+          "name": "Wormhole"
+        }
+      ],
+      "name": "Points mean prizes!",
+	  "description":"Collect at least six stars on one round to unlock the next course"
+
+    },
+    
+    {
+        	"par":3,
+      "player": {
+        "position": [
+          [
+            8.954437255859375,
+            160.45938110351563
+          ]
+        ],
+        "type": "Player",
+        "name": "Player"
+      },
+      "npcs": [
+        {
+          "position": [
+            [
+              100.476837158203125,
+              -140.610626220703125
+            ]
+          ],
+          "type": "Moon",
+          "name": "Moon"
+        },
+        {
+          "position": [
+            [
+              110.476837158203125,
+              -10.610626220703125
+            ]
+          ],
+          "type": "Planet",
+          "name": "Planet"
+        },
+        {
+          "position": [
+            [
+              -110.476837158203125,
+              -78.610626220703125
+            ]
+          ],
+          "type": "Sun",
+          "name": "Sun"
+        },
+        {
+          "position": [
+            [
+              8.323837280273438,
+              -334.75836181640625
+            ]
+          ],
+          "type": "Wormhole",
+          "name": "Wormhole"
+        }
+      ],
+      "name": "A solar system",
+	  "description":"The planets, moons and suns you have to navigate around all have different gravity."
+    },
+    {
+        	"par":3,
+      "player": {
+        "position": [
+          [
+            1.8917694091796875,
+            160.89630126953125
+          ]
+        ],
+        "type": "Player",
+        "name": "Player"
+      },
+      "npcs": [
+        {
+          "position": [
+            [
+              140,
+              -240
+            ],
+            [
+              140,
+              120
+            ]
+          ],
+          "type": "BounceBarrier",
+          "name": "Bounce Barrier"
+        },
+        {
+          "position": [
+            [
+              -204.1742706298828,
+              -120
+            ],
+            [
+              40.659820556640625,
+              -120
+            ]
+          ],
+          "type": "Barrier",
+          "name": "Barrier"
+        },
+        {
+          "position": [
+            [
+              -38.84466552734375,
+              -340.2198486328125
+            ]
+          ],
+          "type": "Wormhole",
+          "name": "Wormhole"
+        }
+      ],
+      "name": "Barrier & Bouncers",
+ 	  "description":"Watch out for barriers! You will bounce off purple ones, but explode if you hit a green one!"
+   }
+  ],
+  "description": "01 - Training ",
+  "name": "Space Academy"
+}

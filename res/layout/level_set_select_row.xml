@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:id="@+id/LinearLayout01"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:background="@android:color/transparent"
+	>
+
+	<LinearLayout android:id="@+id/LinearLayout01"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal" android:background="@android:color/transparent">
+		<TextView android:id="@+id/level_set_select_row_title"
+			android:text="Course Name" android:layout_height="wrap_content"
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent" android:padding="2px"
+			android:textSize="10pt" android:background="@android:color/transparent"
+			android:layout_weight='2'></TextView>
+		<ImageView android:id='@+id/level_set_select_lock_image'
+			android:src="@drawable/lock" android:layout_weight='1'
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/LinearLayout01"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal" android:background="@android:color/transparent">
+		<TextView android:id="@+id/level_set_select_row_progress"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:padding="2px" android:textSize="7pt" android:background="@android:color/transparent"
+			android:text="Lowest Round" android:layout_weight="1"></TextView>
+		<TextView android:id="@+id/level_set_select_course_par"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:padding="2px" android:textSize="7pt" android:background="@android:color/transparent"
+			android:text="Course Par" android:layout_weight="1"></TextView>
+		</LinearLayout>
+	<LinearLayout android:id="@+id/level_set_select_row_stars_row"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal" android:background="@android:color/transparent"
+			android:layout_marginBottom="10px">
+	<TextView android:id="@+id/level_set_select_row_star_label"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:padding="2px" android:textSize="7pt" android:background="@android:color/transparent"
+			android:text="Top star score:" android:layout_weight="1"></TextView>
+		<LinearLayout android:id="@+id/level_set_select_row_stars"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal" android:background="@android:color/transparent"
+			 android:layout_gravity="center_vertical">
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

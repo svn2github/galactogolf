@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content" android:background="@drawable/background"
+  android:padding="20px">
+<TextView android:text="How To Play" android:id="@+id/TextView01" android:textSize="16pt" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+<TextView android:text="@string/how_to_play_text" android:id="@+id/TextView01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0"></TextView>
+		<ImageView android:id='@+id/how_to_play_rocket_image'
+			android:src="@drawable/rocket_frame0" android:layout_weight='1'
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_gravity="center"></ImageView>
+
+<TextView android:text="@string/how_to_play_text2" android:id="@+id/TextView01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0"></TextView>
+		<ImageView android:id='@+id/how_to_play_wormhole_image'
+			android:src="@drawable/wormhole" android:layout_weight='1'
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_gravity="center"></ImageView>
+<TextView android:text="@string/how_to_play_text3" android:id="@+id/TextView01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0"></TextView>
+<Button android:text="Ok" android:id="@+id/exit_how_to_play_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/selector"></Button>
+
+
+</LinearLayout>

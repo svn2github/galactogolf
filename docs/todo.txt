@@ -1,0 +1,26 @@
+Todo
+----
+
+Select level
+	Funky names
+	Lock levels until completed
+	
+
+Game
+	back button bug
+	
+
+Layouts for kate
+	Style level scores
+	
+Images
+	pull
+	reset
+	debris
+	explosion
+
+Code Quality Issues
+-------------------
+Set renderables is very ad hoc
+
+

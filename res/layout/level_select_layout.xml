@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="fill_parent" android:background="@drawable/background"
+  android:orientation="vertical" android:padding="30px">
+	<AbsoluteLayout android:id="@+id/AbsoluteLayout01"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:minHeight="20px"></AbsoluteLayout>
+		<TextView android:text="Select a Course" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@android:id/empty" android:textSize="14pt" android:typeface="sans"></TextView>
+<ListView android:layout_width="fill_parent" android:layout_height="fill_parent" android:id="@+id/level_set_list" android:background="@android:color/transparent" android:cacheColorHint="#00000000"></ListView>
+</LinearLayout>

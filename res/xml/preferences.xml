@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+            android:title="@string/preferences_label">
+
+        <CheckBoxPreference
+                android:key="show_fps_preference"
+                android:title="@string/show_fps_preference_label"
+                android:summary="@string/show_fps_summary_preference_label" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

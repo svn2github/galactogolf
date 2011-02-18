@@ -1,0 +1,812 @@
+{
+  "id": "e6aff262-d09a-4e3b-8bfc-827f9f994745",
+  "levels": [
+  {
+    "par": 4,
+    "player": {
+      "position": [
+        [
+          -90,
+          160
+        ]
+      ],
+      "type": "Player",
+      "name": "Player"
+    },
+    "description": "",
+    "npcs": [
+      {
+        "position": [
+          [
+            -190,
+            -250
+          ],
+          [
+            -190,
+            280
+          ]
+        ],
+        "type": "BounceBarrier",
+        "name": "Bounce Barrier"
+      },
+      {
+        "position": [
+          [
+            190,
+            -250
+          ],
+          [
+            190,
+            280
+          ]
+        ],
+        "type": "BounceBarrier",
+        "name": "Bounce Barrier"
+      },
+      {
+        "position": [
+          [
+            -190,
+            90
+          ],
+          [
+            -30,
+            90
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            -15,
+            -50
+          ],
+          [
+            190,
+	          -50
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            -190,
+            -180
+          ],
+          [
+            -20,
+            -180
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            -99.47205352783203,
+            -240
+          ]
+        ],
+        "type": "Wormhole",
+        "name": "Wormhole"
+      },
+      {
+        "position": [
+          [
+            128.09384155273438,
+            25
+          ]
+        ],
+        "type": "Star",
+        "name": "Star"
+      }
+    ],
+    "name": "m9"
+  },
+  {
+    "par": 4,
+    "player": {
+      "position": [
+        [
+          -90.42732238769531,
+          194.0161895751953
+        ]
+      ],
+      "type": "Player",
+      "name": "Player"
+    },
+    "description": "",
+    "npcs": [
+      {
+        "position": [
+          [
+            -230,
+            -340
+          ],
+          [
+            -230.4855499267578,
+            260
+          ]
+        ],
+        "type": "BounceBarrier",
+        "name": "Bounce Barrier"
+      },
+      {
+        "position": [
+          [
+            -230,
+            -340
+          ],
+          [
+            230,
+            -340
+          ]
+        ],
+        "type": "BounceBarrier",
+        "name": "Bounce Barrier"
+      },
+      {
+        "position": [
+          [
+            230,
+            -340
+          ],
+          [
+            230,
+            260
+          ]
+        ],
+        "type": "BounceBarrier",
+        "name": "Bounce Barrier"
+      },
+      {
+        "position": [
+          [
+            -230,
+            260
+          ],
+          [
+            230,
+            260
+          ]
+        ],
+        "type": "BounceBarrier",
+        "name": "Bounce Barrier"
+      },
+      {
+        "position": [
+          [
+            142.35617065429688,
+            -105.37420654296875
+          ]
+        ],
+        "type": "Wormhole",
+        "name": "Wormhole"
+      },
+      {
+        "position": [
+          [
+            -148.946533203125,
+            80.83743286132813
+          ]
+        ],
+        "type": "Sun",
+        "name": "Sun"
+      },
+      {
+        "position": [
+          [
+            22.631759643554688,
+            -71.65277099609375
+          ]
+        ],
+        "type": "Saturn",
+        "name": "Saturn"
+      },
+      {
+        "position": [
+          [
+            64.28144836425781,
+            -60.059051513671875
+          ],
+          [
+            217.623046875,
+            -56.700653076171875
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            -120.11431884765625,
+            -40.345977783203125
+          ]
+        ],
+        "type": "Star",
+        "name": "Star"
+      }
+    ],
+    "name": "a3"
+  },
+  {
+    "par": 3,
+    "player": {
+      "position": [
+        [
+          -8.914939880371094,
+          180.8954772949219
+        ]
+      ],
+      "type": "Player",
+      "name": "Player"
+    },
+    "description": "",
+    "npcs": [
+      {
+        "position": [
+          [
+            -47.859214782714844,
+            -210.6344451904297
+          ]
+        ],
+        "type": "Sun",
+        "name": "Sun"
+      },
+      {
+        "position": [
+          [
+            9.853363037109375,
+            -340.2306823730469
+          ]
+        ],
+        "type": "Wormhole",
+        "name": "Wormhole"
+      },
+      {
+        "position": [
+          [
+            69.38417053222656,
+            -205
+          ],
+          [
+            210.733154296875,
+            -205
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            105.10261535644531,
+            80.3616943359375
+          ]
+        ],
+        "type": "Sun",
+        "name": "Sun"
+      },
+      {
+        "position": [
+          [
+            34.72137451171875,
+            -213.89053344726563
+          ]
+        ],
+        "type": "Star",
+        "name": "Star"
+      }
+    ],
+    "name": "m5"
+  },
+  {
+    "par": 3,
+    "player": {
+      "position": [
+        [
+          -14.545455932617188,
+          179.86312866210938
+        ]
+      ],
+      "type": "Player",
+      "name": "Player"
+    },
+    "description": "",
+    "npcs": [
+      {
+        "position": [
+          [
+            91.96482849121094,
+            12.512237548828125
+          ]
+        ],
+        "type": "Saturn",
+        "name": "Saturn"
+      },
+      {
+        "position": [
+          [
+            -50.205291748046875,
+            4.69207763671875
+          ]
+        ],
+        "type": "Wormhole",
+        "name": "Wormhole"
+      },
+      {
+        "position": [
+          [
+            -125.80645751953125,
+            40
+          ],
+          [
+            63.401763916015625,
+            40
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            -199.4135284423828,
+            132.16024780273438
+          ]
+        ],
+        "type": "Moon",
+        "name": "Moon"
+      },
+      {
+        "position": [
+          [
+            84.92671203613281,
+            -176.7350616455078
+          ]
+        ],
+        "type": "Star",
+        "name": "Star"
+      }
+    ],
+    "name": "m1"
+  },
+  {
+    "par": 4,
+    "player": {
+      "position": [
+        [
+          -107.44866943359375,
+          99.31573486328125
+        ]
+      ],
+      "type": "Player",
+      "name": "Player"
+    },
+    "description": "",
+    "npcs": [
+      {
+        "position": [
+          [
+            -15.0146484375,
+            143.10848999023438
+          ]
+        ],
+        "type": "Sun",
+        "name": "Sun"
+      },
+      {
+        "position": [
+          [
+            23.929611206054688,
+            -165.00491333007813
+          ]
+        ],
+        "type": "Planet",
+        "name": "Planet"
+      },
+      {
+        "position": [
+          [
+            84.45748901367188,
+            -194.72140502929688
+          ]
+        ],
+        "type": "Wormhole",
+        "name": "Wormhole"
+      },
+      {
+        "position": [
+          [
+            57.18473815917969,
+            -155
+          ],
+          [
+            216.3636474609375,
+            -155
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            74.13484191894531,
+            175.95303344726563
+          ]
+        ],
+        "type": "Star",
+        "name": "Star"
+      }
+    ],
+    "name": "m4"
+  },
+  {
+    "par": 4,
+    "player": {
+      "position": [
+        [
+          119.64810180664063,
+          161.87680053710938
+        ]
+      ],
+      "type": "Player",
+      "name": "Player"
+    },
+    "description": "",
+    "npcs": [
+      {
+        "position": [
+          [
+            -210,
+            330
+          ],
+          [
+            -210,
+            -330
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            -210,
+            -330
+          ],
+          [
+            210,
+            -330
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            210,
+            -330
+          ],
+          [
+            210,
+            330
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            -210,
+            330
+          ],
+          [
+            210,
+            330
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            51.61286926269531,
+            -132.1602783203125
+          ]
+        ],
+        "type": "Saturn",
+        "name": "Saturn"
+      },
+      {
+        "position": [
+          [
+            -141.70089721679688,
+            119.64816284179688
+          ]
+        ],
+        "type": "Planet",
+        "name": "Planet"
+      },
+      {
+        "position": [
+          [
+            -5.630584716796875,
+            78.20140075683594
+          ]
+        ],
+        "type": "Sun",
+        "name": "Sun"
+      },
+      {
+        "position": [
+          [
+            -140.278564453125,
+            -114.95602416992188
+          ]
+        ],
+        "type": "Wormhole",
+        "name": "Wormhole"
+      },
+      {
+        "position": [
+          [
+            103.22579956054688,
+            -172.8249969482422
+          ]
+        ],
+        "type": "Star",
+        "name": "Star"
+      }
+    ],
+    "name": "a6"
+  },
+  {
+    "par": 3,
+    "player": {
+      "position": [
+        [
+          -1.407623291015625,
+          185.66958618164063
+        ]
+      ],
+      "type": "Player",
+      "name": "Player"
+    },
+    "description": "",
+    "npcs": [
+      {
+        "position": [
+          [
+            -9.3841552734375,
+            -20.1280517578125
+          ]
+        ],
+        "type": "Sun",
+        "name": "Sun"
+      },
+      {
+        "position": [
+          [
+            -171.78884887695313,
+            -20.353851318359375
+          ],
+          [
+            -59.53077697753906,
+            -20.94036865234375
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            3.6949920654296875,
+            -360.0782165527344
+          ],
+          [
+            3.81231689453125,
+            -254.70188903808594
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      },
+      {
+        "position": [
+          [
+            -212.08206176757813,
+            -52.67840576171875
+          ]
+        ],
+        "type": "Star",
+        "name": "Star"
+      },
+      {
+        "position": [
+          [
+            141.23165893554688,
+            -89.433013916015625
+          ]
+        ],
+        "type": "Wormhole",
+        "name": "Wormhole"
+      },
+      {
+        "position": [
+          [
+            27.6246337890625,
+            10.762451171875
+          ],
+          [
+            183.04986572265625,
+            200.07046508789063
+          ]
+        ],
+        "type": "Barrier",
+        "name": "Barrier"
+      }
+    ],
+    "name": "h5"
+  },
+  {
+      "par": 4,
+      "player": {
+        "position": [
+          [
+            -112.14076232910156,
+            164.88760375976563
+          ]
+        ],
+        "type": "Player",
+        "name": "Player"
+      },
+      "description": "",
+      "npcs": [
+        {
+          "position": [
+            [
+              0,
+              -212.8250274658203
+            ]
+          ],
+          "type": "Planet",
+          "name": "Planet"
+        },
+        {
+          "position": [
+            [
+              0,
+              -188.48480224609375
+            ],
+            [
+              0,
+              338.6314392089844
+            ]
+          ],
+          "type": "Barrier",
+          "name": "Barrier"
+        },
+        {
+          "position": [
+            [
+              161.40762329101563,
+              174.27175903320313
+            ]
+          ],
+          "type": "Wormhole",
+          "name": "Wormhole"
+        },
+        {
+          "position": [
+            [
+              -165.2199249267578,
+              250
+            ],
+            [
+              189.61874389648438,
+              250
+            ]
+          ],
+          "type": "Barrier",
+          "name": "Barrier"
+        },
+        {
+          "position": [
+            [
+              112.6099853515625,
+              60.66168212890625
+            ]
+          ],
+          "type": "Star",
+          "name": "Star"
+        },
+        {
+          "position": [
+            [
+              141.17311096191406,
+              -90.9346923828125
+            ],
+            [
+              27.272842407226563,
+              235.1708679199219
+            ]
+          ],
+          "type": "BounceBarrier",
+          "name": "Bounce Barrier"
+        }
+      ],
+      "name": "h6"
+    },
+    {
+      "par": 4,
+      "player": {
+        "position": [
+          [
+            -14.545440673828125,
+            200.241455078125
+          ]
+        ],
+        "type": "Player",
+        "name": "Player"
+      },
+      "description": "",
+      "npcs": [
+        {
+          "position": [
+            [
+              -7.038139343261719,
+              50.18472290039063
+            ]
+          ],
+          "type": "Planet",
+          "name": "Planet"
+        },
+        {
+          "position": [
+            [
+              -10.322593688964844,
+              -180.94529724121094
+            ]
+          ],
+          "type": "Planet",
+          "name": "Planet"
+        },
+        {
+          "position": [
+            [
+              -8.914962768554688,
+              -255.43008422851563
+            ]
+          ],
+          "type": "Wormhole",
+          "name": "Wormhole"
+        },
+        {
+          "position": [
+            [
+              -68.03517150878906,
+              -380.33432006835938
+            ]
+          ],
+          "type": "Star",
+          "name": "Star"
+        }
+      ],
+      "name": "h8"
+    }
+  ],
+  "description": "",
+  "name": "Starship Captain"
+}

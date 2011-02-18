@@ -1,0 +1,36 @@
+/* 
+ * Copyright 2011 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.galactogolf.specificobjectmodel;
+
+import com.galactogolf.genericobjectmodel.Sprite;
+
+/**
+ * The reset button that explodes the ship and sends it back to the start
+ */
+public class ResetButtonSprite extends Sprite {
+
+	@Override
+	public int GetCurrentFrame() {
+		return 0;
+	}
+
+	@Override
+	public int GetCurrentFrameSet() {
+		return 0;
+	}
+
+}
