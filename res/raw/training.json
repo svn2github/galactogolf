@@ -26,7 +26,7 @@
         }
       ],
       "name": "Welcome to Galacto Golf!",
-	  "description":"Press and pull back on your rocket to launch it towards the Wormhole.\n\nIf you need to try again, press the reset button on the bottom right\n"
+	  "description":"Press and pull back on your rocket to launch it towards the Wormhole.\n\nIf you need to try again, press the abort button on the bottom right\n"
     },
     {
         	"par":2,

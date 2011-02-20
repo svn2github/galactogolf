@@ -221,6 +221,9 @@ public class GameActivity extends Activity {
 
 			}
 		} else if (requestCode == UIConstants.LEVEL_SET_COMPLETED_ACTIVITY) {
+			Intent i = new Intent();
+			i.putExtra(UIConstants.LEVEL_SET_COMPLETED, true);
+			setResult(RESULT_OK, i);
 			finish();
 		}
 	}

@@ -15,6 +15,7 @@
  */package com.galactogolf;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 import com.galactogolf.R;
 import com.galactogolf.database.DatabaseAdapter;
@@ -60,7 +61,6 @@ public class LevelSetSelectActivity extends Activity {
 	ListView levelList;
 	final Activity thisActivity = this;
 
-
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -86,31 +86,39 @@ public class LevelSetSelectActivity extends Activity {
 					long id) {
 				LevelSet levelSet = _levelSets.get((int) id);
 				LevelSet prevLevelSet = null;
-				if(id>=2) {
-					 prevLevelSet = _levelSets.get((int) id-1);
+				if (id >= 2) {
+					prevLevelSet = _levelSets.get((int) id - 1);
 				}
 				try {
-					if(prevLevelSet==null || prevLevelSet.isCompleted(thisActivity) || UserPreferences.EditorEnabled) {
-					Intent i = new Intent(thisActivity,
-							LevelSetDetailsActivity.class);
-					if (levelSet.getFileResourceId() != null) {
-						i.putExtra(GameActivity.LEVEL_SET_RESOURCE_ID,
-								levelSet.getFileResourceId());
-
-					} else {
-						i.putExtra(GameActivity.LEVEL_SET_FILENAME,
-								levelSet.getFilename());
-					}
-					startActivityForResult(i,
-							UIConstants.LEVEL_SET_DETAILS_ACTIVITY);
+					if (prevLevelSet == null
+							|| prevLevelSet.isCompleted(thisActivity)
+							|| UserPreferences.EditorEnabled) {
+						startDetailsActivity(levelSet);
 					}
 				} catch (DatabaseException e) {
-					Log.e("Exception",e.getMessage());
+					Log.e("Exception", e.getMessage());
 				}
 			}
+
 		});
 
 	}
+	private void startDetailsActivity(LevelSet levelSet) {
+		Intent i = new Intent(thisActivity,
+				LevelSetDetailsActivity.class);
+		if (levelSet.getFileResourceId() != null) {
+			i.putExtra(GameActivity.LEVEL_SET_RESOURCE_ID,
+					levelSet.getFileResourceId());
+
+		} else {
+			i.putExtra(GameActivity.LEVEL_SET_FILENAME,
+					levelSet.getFilename());
+		}
+		startActivityForResult(i,
+				UIConstants.LEVEL_SET_DETAILS_ACTIVITY);
+		
+	}
+
 
 	private ArrayList<LevelSet> loadLevels() {
 		ArrayList<LevelSet> levels = new ArrayList<LevelSet>();
@@ -128,7 +136,6 @@ public class LevelSetSelectActivity extends Activity {
 		}
 		return levels;
 	}
-
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -193,9 +200,9 @@ public class LevelSetSelectActivity extends Activity {
 			}
 			LevelSet levelSet = (LevelSet) mData.get(position);
 			LevelSet prevLevelSet = null;
-			if(position>0) {
-				prevLevelSet = mData.get(position-1);
-				
+			if (position > 0) {
+				prevLevelSet = mData.get(position - 1);
+
 			}
 			if (levelSet != null) {
 				TextView title = (TextView) v
@@ -204,39 +211,40 @@ public class LevelSetSelectActivity extends Activity {
 					title.setText(levelSet.getName());
 				}
 				TextView coursePar = (TextView) v
-				.findViewById(R.id.level_set_select_course_par);
+						.findViewById(R.id.level_set_select_course_par);
 				coursePar.setText("Par: " + levelSet.getCoursePar());
 
-				
 				TextView progress = (TextView) v
 						.findViewById(R.id.level_set_select_row_progress);
-				
+
 				TextView starLabel = (TextView) v
-				.findViewById(R.id.level_set_select_row_star_label);
+						.findViewById(R.id.level_set_select_row_star_label);
 				if (progress != null) {
 					ArrayList<GalactoGolfLevelSetResult> scores = null;
 					ArrayList<GalactoGolfLevelSetResult> stars = null;
-									try {
+					try {
 						adapter.open();
 						scores = GalactoGolfLevelSetResult
-								.loadScoresFromDatabase(
-										adapter.getOpenDB(), levelSet.getId());
+								.loadScoresFromDatabase(adapter.getOpenDB(),
+										levelSet.getId());
 						stars = GalactoGolfLevelSetResult
-						.loadStarsFromDatabase(
-								adapter.getOpenDB(), levelSet.getId());
-					adapter.close();
+								.loadStarsFromDatabase(adapter.getOpenDB(),
+										levelSet.getId());
+						adapter.close();
 
 					} catch (DatabaseException e) {
 						Log.e("Exception", e.getMessage());
 					}
 					if (scores != null && scores.size() > 0) {
 						progress.setText("Top round: " + scores.get(0).score);
-						LinearLayout starLayout = (LinearLayout) v.findViewById(R.id.level_set_select_row_stars);
+						LinearLayout starLayout = (LinearLayout) v
+								.findViewById(R.id.level_set_select_row_stars);
 						starLayout.removeAllViews();
-						
-						for(int i=0;i<stars.get(0).bonus;i++) {
+
+						for (int i = 0; i < stars.get(0).bonus; i++) {
 							ImageView starImage = new ImageView(thisActivity);
-							starImage.setImageResource(R.drawable.bonus_small_star);
+							starImage
+									.setImageResource(R.drawable.bonus_small_star);
 							starLayout.addView(starImage);
 						}
 					} else {
@@ -246,32 +254,29 @@ public class LevelSetSelectActivity extends Activity {
 					}
 				}
 				try {
-					if(prevLevelSet==null || prevLevelSet.isCompleted(thisActivity)) {
-						ImageView lockImage = (ImageView) v.findViewById(R.id.level_set_select_lock_image);
+					if (prevLevelSet == null
+							|| prevLevelSet.isCompleted(thisActivity)) {
+						ImageView lockImage = (ImageView) v
+								.findViewById(R.id.level_set_select_lock_image);
 						lockImage.setVisibility(View.INVISIBLE);
-						int scoreColor = Color.argb(255,255, 194, 96);
-						int parColor = Color.argb(255,178, 196, 205);
+						int scoreColor = Color.argb(255, 255, 194, 96);
+						int parColor = Color.argb(255, 178, 196, 205);
 						coursePar.setTextColor(scoreColor);
 						progress.setTextColor(parColor);
 						starLabel.setTextColor(scoreColor);
-						
-				
-					}
-					else {
-						int lockedColor = Color.argb(255,150, 150, 170);
+
+					} else {
+						int lockedColor = Color.argb(255, 150, 150, 170);
 						title.setTextColor(lockedColor);
 						coursePar.setTextColor(lockedColor);
 						progress.setTextColor(lockedColor);
 						starLabel.setTextColor(lockedColor);
-						
 
 					}
 				} catch (DatabaseException ex) {
-					Log.e("Exeption",ex.getMessage());
+					Log.e("Exeption", ex.getMessage());
 				}
 
-				
-				
 			}
 			return v;
 		}
@@ -282,24 +287,43 @@ public class LevelSetSelectActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (requestCode == UIConstants.LEVEL_SET_DETAILS_ACTIVITY) {
-			if (data != null
-					&& data.getBooleanExtra(UIConstants.EXIT_TO_MENU, false)) {
-				Intent i = new Intent();
+			if (data != null)
 
-				i.putExtra(UIConstants.EXIT_TO_MENU, true);
-				setResult(RESULT_OK, i);
+				if (data.getBooleanExtra(UIConstants.EXIT_TO_MENU, false)) {
+					Intent i = new Intent();
 
-				finish();
-			} else {
-				_levelSets.clear();
-				_levelSets.addAll(loadLevels());
-				if (_levelSets != null) {
-					levelList.setAdapter(new LevelSetAdapter(this,
-							R.layout.level_set_select_row, _levelSets));
+					i.putExtra(UIConstants.EXIT_TO_MENU, true);
+					setResult(RESULT_OK, i);
+
+					finish();
+				} else if (data.getBooleanExtra(UIConstants.MOVE_TO_NEXT_LEVEL,
+						false)) {
+					UUID currentLevelNumber = UUID.fromString(data
+							.getStringExtra(UIConstants.CURRENT_LEVEL_ID));
+					boolean currentLevelFound = false;
+					LevelSet nextLevel = null;
+					for(LevelSet levelSet : _levelSets) {
+						if(currentLevelFound) {
+							nextLevel = levelSet;
+						}
+						if(levelSet.getId().equals(currentLevelNumber)) {
+							currentLevelFound = true;
+						}
+						
+					}
+					
+					if(nextLevel!=null) {
+						startDetailsActivity(nextLevel);
+					}
 				}
-
-			}
 		} else {
+			_levelSets.clear();
+			_levelSets.addAll(loadLevels());
+			if (_levelSets != null) {
+				levelList.setAdapter(new LevelSetAdapter(this,
+						R.layout.level_set_select_row, _levelSets));
+			}
+
 		}
 	}
 }

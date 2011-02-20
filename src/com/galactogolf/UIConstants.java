@@ -29,4 +29,7 @@ public class UIConstants {
 	public static final int LEVEL_SET_DETAILS_ACTIVITY = 5;
 	public static final int LEVEL_SET_EDIT_DETAILS_ACTIVITY = 6;
 	public static final String EXIT_TO_MENU = "EXIT_TO_MENU";
-}
+	public static final String LEVEL_SET_COMPLETED = "LEVEL_SET_COMPLETED";
+	protected static final String MOVE_TO_NEXT_LEVEL = "MOVE_TO_NEXT_LEVEL";
+
+	protected static final String CURRENT_LEVEL_ID = "CURRENT_LEVEL_ID";}

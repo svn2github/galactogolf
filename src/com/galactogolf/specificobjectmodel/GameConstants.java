@@ -61,8 +61,10 @@ public class GameConstants {
 			{ R.drawable.rocket_frame0, R.drawable.rocket_frame1 },
 			{ R.drawable.explosion_frame0, R.drawable.explosion_frame1,
 					R.drawable.explosion_frame2, R.drawable.explosion_frame3 },
-					{ R.drawable.rocket_warp_frame0, R.drawable.rocket_warp_frame1,
-						R.drawable.rocket_frame0 }};
+					{ R.drawable.rocket_frame0,  R.drawable.rocket_frame0, R.drawable.rocket_frame0,R.drawable.rocket_warp_frame0, 
+						R.drawable.rocket_warp_frame1,
+						R.drawable.rocket_warp_frame2, R.drawable.rocket_warp_frame3, R.drawable.rocket_warp_frame4,
+						R.drawable.rocket_warp_frame5,R.drawable.rocket_warp_frame6,R.drawable.rocket_frame0 }};
 	public static final int[][] FRAMES_ARROW = new int[][] {
 			{ R.drawable.arrow }, { R.drawable.arrow2 } };
 	public static final int[][] FRAMES_DEBRIS1 = new int[][] { { R.drawable.debris1 } };
@@ -78,7 +80,7 @@ public class GameConstants {
 
 	public static final int TEXTPRINTER_REGULAR = 0;
 	public static final int TEXTPRINTER_SMALL = 0;
-	public static final float TIME_SCALE = 0.300001f;
+	public static final float TIME_SCALE = 0.30000f;
 
 	public static final String LOCATION_OF_LEVELS_CREATED_BY_USER = "levels_created_by_this_user";
 	public static final int POWER_ARROW_RED_FRAMESET = 0;

@@ -103,8 +103,7 @@ public class LevelSetDetailsActivity extends Activity {
 				playLevelSet();
 			}
 		});
-		
-		
+
 		Button exitButton = (Button) findViewById(R.id.level_set_details_exit_button);
 
 		exitButton.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +120,6 @@ public class LevelSetDetailsActivity extends Activity {
 		loadScores();
 		Log.i("Scores", "scores");
 
-			
 		// registerForContextMenu(getView());
 		thisActivity = this;
 	}
@@ -141,28 +139,27 @@ public class LevelSetDetailsActivity extends Activity {
 		} catch (DatabaseException ex) {
 			Log.e("Database exception", ex.getMessage());
 		}
-		
-		for(int i=_scores.size();i<5;i++) {
+
+		for (int i = _scores.size(); i < 5; i++) {
 			_scores.add(null);
 		}
-		for(int i=_stars.size();i<5;i++) {
+		for (int i = _stars.size(); i < 5; i++) {
 			_stars.add(null);
 		}
 		ListView scoreList = (ListView) findViewById(R.id.level_score_list);
-		if (_stars != null && _stars.size()>0) {
+		if (_stars != null && _stars.size() > 0) {
 			LinearLayout starLayout = (LinearLayout) findViewById(R.id.level_set_details_stars);
 			starLayout.removeAllViews();
-			if(_stars.get(0)!=null){
-			for(int i=0;i<_stars.get(0).bonus;i++) {
-				ImageView starImage = new ImageView(this);
-				starImage.setImageResource(R.drawable.bonus_small_star);
-				starLayout.addView(starImage);
-			}
+			if (_stars.get(0) != null) {
+				for (int i = 0; i < _stars.get(0).bonus; i++) {
+					ImageView starImage = new ImageView(this);
+					starImage.setImageResource(R.drawable.bonus_small_star);
+					starLayout.addView(starImage);
+				}
 			}
 		}
 		scoreList.setAdapter(new LevelSetScoreAdapter(this,
 				R.layout.level_set_select_row, _scores));
-
 
 	}
 
@@ -252,22 +249,44 @@ public class LevelSetDetailsActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (requestCode == UIConstants.GAME_ACTIVITY) {
-			if (data != null
-					&& data.getBooleanExtra(UIConstants.EXIT_TO_MENU, false)) {
-				Intent i = new Intent();
+			Log.i("Scores", "scores");
+			ListView scoreList = (ListView) findViewById(R.id.level_score_list);
+			loadScores();
 
-				i.putExtra(UIConstants.EXIT_TO_MENU, true);
-				setResult(RESULT_OK, i);
+			if (data != null) {
 
-				finish();
-			} else {
-				Log.i("Scores", "scores");
-				ListView scoreList = (ListView) findViewById(R.id.level_score_list);
-				loadScores();
+				if (data.getBooleanExtra(UIConstants.EXIT_TO_MENU, false)) {
+					Intent i = new Intent();
+
+					i.putExtra(UIConstants.EXIT_TO_MENU, true);
+					setResult(RESULT_OK, i);
+
+					finish();
+				} else if (data.getBooleanExtra(
+						UIConstants.LEVEL_SET_COMPLETED, false)) {
+					Button playButton = (Button) findViewById(R.id.level_set_details_play_button);
+					playButton.setText("Replay");
+					Button exitButton = (Button) findViewById(R.id.level_set_details_exit_button);
+					exitButton.setText("Next level");
+					exitButton.setOnClickListener(new View.OnClickListener() {
+
+						public void onClick(View v) {
+							Intent i = new Intent();
+							i.putExtra(UIConstants.MOVE_TO_NEXT_LEVEL, true);
+							i.putExtra(UIConstants.CURRENT_LEVEL_ID, _levelSet
+									.getId().toString());
+							setResult(RESULT_OK, i);
+
+							finish();
+						}
+					});
+
+				}
+			}
+
+	
 		}
 
-		} else {
-		}
 	}
 
 	private class LevelSetScoreAdapter extends
@@ -287,7 +306,7 @@ public class LevelSetDetailsActivity extends Activity {
 			mData.add(item);
 			notifyDataSetChanged();
 		}
-		
+
 		@Override
 		public void clear() {
 			mData.clear();
@@ -318,32 +337,32 @@ public class LevelSetDetailsActivity extends Activity {
 			GalactoGolfLevelSetResult o = (GalactoGolfLevelSetResult) mData
 					.get(position);
 			TextView title = (TextView) v
-			.findViewById(R.id.level_set_score_number_label);
+					.findViewById(R.id.level_set_score_number_label);
 			title.setTypeface(typeface);
 			if (title != null) {
 				title.setText("" + (position + 1));
 			}
 			if (o != null) {
-				
+
 				TextView score = (TextView) v
 						.findViewById(R.id.level_set_score_score_label);
 				score.setTypeface(typeface);
 				if (score != null) {
 					score.setText(o.score + " strokes");
 				}
-				LinearLayout starLayout = (LinearLayout) v.findViewById(R.id.level_set_score_row_stars);
+				LinearLayout starLayout = (LinearLayout) v
+						.findViewById(R.id.level_set_score_row_stars);
 				starLayout.removeAllViews();
-				if(starLayout!=null) {
-					for(int i=0;i<o.bonus;i++) {
+				if (starLayout != null) {
+					for (int i = 0; i < o.bonus; i++) {
 						ImageView starImage = new ImageView(thisActivity);
 						starImage.setImageResource(R.drawable.bonus_small_star);
-						
-						
+
 						starLayout.addView(starImage);
 					}
-					}
+				}
 			}
-	
+
 			return v;
 		}
 

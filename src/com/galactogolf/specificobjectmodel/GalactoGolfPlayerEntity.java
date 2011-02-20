@@ -45,7 +45,7 @@ public class GalactoGolfPlayerEntity extends PlayerEntity {
 		} else if(!_dead && playerHitWormhole)  {
 			_currentFrameSet = 2;
 			_currentFrame =  Math.min((int)Math
-					.floor(((float) _timeSinceHitWormhole / 400.0f) * 2),2);
+					.floor(((float) _timeSinceHitWormhole / 600.0f) * 10),10);
 			if(_currentFrame==1) {
 				Log.i("hello","world");
 			}

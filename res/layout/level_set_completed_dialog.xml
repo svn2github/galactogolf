@@ -4,7 +4,7 @@
 	android:orientation="vertical" android:layout_margin="10px" android:padding="10px">
 	<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:text="@string/level_set_completed_label"
-		android:textSize="20pt"></TextView>
+		android:textSize="12pt"></TextView>
 		<TableLayout android:id="@+id/level_set_completed_score_table" android:layout_width="fill_parent" android:layout_height="wrap_content"
 	android:background="#ffffff"
 	>

@@ -23,8 +23,8 @@
 <activity android:theme="@style/Theme.MessagePopupDialogTheme" android:name="MessagePopupActivity"></activity>
 <activity android:name="LevelCompletedDialogActivity" android:theme="@style/Theme.MessagePopupDialogTheme"></activity>
 <activity android:theme="@style/Theme.MessagePopupDialogTheme" android:name="LevelSetCompletedDialogActivity"></activity>
-<activity android:name="GalactoGolfPreferences"></activity>
-<activity android:name="HowToPlayActivity"></activity>
+<activity android:name="GalactoGolfPreferences"  android:screenOrientation="portrait"></activity>
+<activity android:name="HowToPlayActivity"  android:screenOrientation="portrait"></activity>
 </application>
 
 

@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Galacto Golf</string>
 <string name="select_level_button_text">Play</string>
-<string name="level_set_details_play_button">Play!</string>
+<string name="level_set_details_play_button">Play</string>
 <string name="level_set_details_exit_button">No thanks</string>
 <string name="level_set_details_high_scores_label">Top Rounds</string>
 <string name="level_set_edit_name_label">Level set name</string>
@@ -24,8 +24,10 @@
 <string name="sound_effects_summary_preference_label">Play sound effects</string>
 
 <string name="sound_effects_preference_label">Sound effects</string>
-<string name="how_to_play_text">Welcome to Galacto Golf, a gravity game! You are in this rocket:</string>
-<string name="how_to_play_text2">And you must reach the wormhole:</string>
-<string name="how_to_play_text3">To launch your rocket, press on the rocket and pull back to decide your direction and speed.</string>
+<string name="how_to_play_text">Welcome to Galacto Golf, a gravity game! You are in this rocket.</string>
+<string name="how_to_play_text2">Reach the wormhole to complete a hole.</string>
+<string name="how_to_play_text3">Avoid hitting planets, moons and the red barriers.</string>
+<string name="how_to_play_text4">You can bounce off blue barriers.</string>
+<string name="how_to_play_text5">Collect a star from 6 holes on a single course to unlock the next one.</string>
 
 </resources>
