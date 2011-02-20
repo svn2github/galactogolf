@@ -86,7 +86,7 @@ public class BarrierEntity extends NonPlayerEntity {
 	@Override
 	protected void updateAnimation(long timeSinceLastFrame) {
 		_timeSinceLastFrameChange += timeSinceLastFrame;
-		if (_timeSinceLastFrameChange > 160.0) {
+		if (_timeSinceLastFrameChange > 200.0) {
 			_currentFrame = (_currentFrame + 1) % 4;
 			_timeSinceLastFrameChange = 0;
 		}
@@ -115,7 +115,7 @@ public class BarrierEntity extends NonPlayerEntity {
 		updateAnimation(timeSinceLastFrame);
 		instructionList.AddRenderSimpleSpriteInstruction(getPosition().x,
 				getPosition().y, (float) (getAngle() * 180 / Math.PI), Vector2D
-						.Sub(_position2, _position1).magnitude() / 256, 1.0f,
+						.Sub(_position2, _position1).magnitude() / 128, 1.0f,
 				GetCurrentFrameSet(), getCurrentFrame(), GetRenderable());
 	}
 

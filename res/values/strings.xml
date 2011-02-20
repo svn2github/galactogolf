@@ -27,7 +27,7 @@
 <string name="how_to_play_text">Welcome to Galacto Golf, a gravity game! You are in this rocket.</string>
 <string name="how_to_play_text2">Reach the wormhole to complete a hole.</string>
 <string name="how_to_play_text3">Avoid hitting planets, moons and the red barriers.</string>
-<string name="how_to_play_text4">You can bounce off blue barriers.</string>
+<string name="how_to_play_text4">You can bounce off green barriers.</string>
 <string name="how_to_play_text5">Collect a star from 6 holes on a single course to unlock the next one.</string>
 
 </resources>

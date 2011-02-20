@@ -48,10 +48,10 @@ public class GameConstants {
 	public static int[][] FRAMES_MOON = new int[][] { { R.drawable.moon } };
 	public static int[][] FRAMES_BARRIER = new int[][] { {
 			R.drawable.barrier_frame0, R.drawable.barrier_frame1,
-			R.drawable.barrier_frame2, R.drawable.barrier_frame1 } };
+			R.drawable.barrier_frame0,R.drawable.barrier_frame2,  } };
 	public static int[][] FRAMES_BOUNCE_BARRIER = new int[][] { {
 			R.drawable.bounce_barrier_frame0, R.drawable.bounce_barrier_frame1,
-			R.drawable.bounce_barrier_frame2, R.drawable.bounce_barrier_frame1 } };
+			R.drawable.bounce_barrier_frame0,R.drawable.bounce_barrier_frame2 } };
 	public static int[][] FRAMES_PLANET = new int[][] { { R.drawable.planet } };
 	public static int[][] FRAMES_STAR = new int[][] { { R.drawable.star } };
 	public static int[][] FRAMES_SMALL_STAR = new int[][] { { R.drawable.small_star } };
