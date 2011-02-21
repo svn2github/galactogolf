@@ -32,6 +32,7 @@ import java.util.UUID;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.galactogolf.R;
 import com.galactogolf.database.DatabaseAdapter;
 import com.galactogolf.database.DatabaseException;
 import com.galactogolf.serialization.JSONSerializer;
@@ -84,6 +85,24 @@ public class LevelSet {
 					"Have not selected first level yet!");
 		}
 		return _levels.get(_currentLevel);
+	}
+	
+	
+	public static ArrayList<LevelSet> loadLevels(Context context) {
+		ArrayList<LevelSet> levels = new ArrayList<LevelSet>();
+		try {
+			levels.add(LevelSet.loadLevelSetFromRaw(context, R.raw.training));
+
+			levels.add(LevelSet.loadLevelSetFromRaw(context, R.raw.amateur));
+			levels.add(LevelSet.loadLevelSetFromRaw(context, R.raw.expert));
+			levels.add(LevelSet.loadLevelSetFromRaw(context, R.raw.veteran));
+			levels.addAll(LevelSet.loadAllLevelSetsFromInternalStorage(context));
+		} catch (NotFoundException e) {
+			Log.e("Not found", e.getMessage());
+		} catch (LevelLoadingException e) {
+			Log.e("Level loading issue", e.getMessage());
+		}
+		return levels;
 	}
 
 	public LevelDefinition getNextLevel() throws LevelLoadingException {

@@ -110,7 +110,7 @@ public class LevelSetDetailsActivity extends Activity {
 
 			public void onClick(View v) {
 				Intent i = new Intent();
-	
+
 				finish();
 			}
 		});
@@ -249,6 +249,11 @@ public class LevelSetDetailsActivity extends Activity {
 		if (requestCode == UIConstants.GAME_ACTIVITY) {
 			Log.i("Scores", "scores");
 			ListView scoreList = (ListView) findViewById(R.id.level_score_list);
+			// get the previous star score
+			int prevLevelStars = 0;
+			if(_stars!=null && _stars.size()>0){
+				prevLevelStars = _stars.get(0).bonus;
+			}
 			loadScores();
 
 			if (data != null) {
@@ -261,37 +266,59 @@ public class LevelSetDetailsActivity extends Activity {
 
 					finish();
 				} else
-					
-						if (data.getBooleanExtra(
-								UIConstants.LEVEL_SET_COMPLETED, false)){
-							Button playButton = (Button) findViewById(R.id.level_set_details_play_button);
-							playButton.setText("Replay");
-							try{
-							if(_levelSet.isCompleted(thisActivity)) {
-						
-							Button exitButton = (Button) findViewById(R.id.level_set_details_exit_button);
-							exitButton.setText("Next level");
-							exitButton.setOnClickListener(new View.OnClickListener() {
 
-								public void onClick(View v) {
-									Intent i = new Intent();
-									i.putExtra(UIConstants.MOVE_TO_NEXT_LEVEL, true);
-									i.putExtra(UIConstants.CURRENT_LEVEL_ID, _levelSet
-											.getId().toString());
-									setResult(RESULT_OK, i);
+				if (data.getBooleanExtra(UIConstants.LEVEL_SET_COMPLETED, false)) {
+					Button playButton = (Button) findViewById(R.id.level_set_details_play_button);
+					playButton.setText("Replay");
+					ArrayList<LevelSet> allLevels = LevelSet
+							.loadLevels(thisActivity);
+					try {
+						if (_levelSet.isCompleted(thisActivity)) {
+							TextView message = (TextView) findViewById(R.id.level_set_details_message);
+							
+							// check if we are on the last level
+							if (!allLevels.get(allLevels.size() - 1).getId()
+									.equals(_levelSet.getId())) {
+								Button exitButton = (Button) findViewById(R.id.level_set_details_exit_button);
+								exitButton.setText("Next level");
+								exitButton
+										.setOnClickListener(new View.OnClickListener() {
 
-									finish();
+											public void onClick(View v) {
+												Intent i = new Intent();
+												i.putExtra(
+														UIConstants.MOVE_TO_NEXT_LEVEL,
+														true);
+												i.putExtra(
+														UIConstants.CURRENT_LEVEL_ID,
+														_levelSet.getId()
+																.toString());
+												setResult(RESULT_OK, i);
+
+												finish();
+											}
+										});
+								
+								/// if the level was previously locked
+								if(prevLevelStars<6) {
+									message.setText("Course completed! Next course unlocked ");
 								}
-							});
+
 							}
-						} catch (DatabaseException e) {
-							Log.i("Exception",e.getMessage());
+							else { // we are on the last level, the game is completed!
+								/// if the level was previously locked
+								if(prevLevelStars<6) {
+									message.setText("You've completed the game, now try and get a high score!");
+								}
+							}
 						}
-						}
-				
+					} catch (DatabaseException e) {
+						Log.i("Exception", e.getMessage());
+					}
+				}
+
 			}
 
-	
 		}
 
 	}

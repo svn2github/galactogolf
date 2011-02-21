@@ -71,7 +71,7 @@ public class LevelSetSelectActivity extends Activity {
 		adapter = new DatabaseAdapter(this);
 		adapter.open();
 		_levelSets = new ArrayList<LevelSet>();
-		_levelSets.addAll(loadLevels());
+		_levelSets.addAll(LevelSet.loadLevels(this));
 		adapter.close();
 		// Create an ArrayAdapter, that will actually make the Strings above
 		// appear in the ListView
@@ -120,22 +120,7 @@ public class LevelSetSelectActivity extends Activity {
 	}
 
 
-	private ArrayList<LevelSet> loadLevels() {
-		ArrayList<LevelSet> levels = new ArrayList<LevelSet>();
-		try {
-			levels.add(LevelSet.loadLevelSetFromRaw(this, R.raw.training));
 
-			levels.add(LevelSet.loadLevelSetFromRaw(this, R.raw.amateur));
-			levels.add(LevelSet.loadLevelSetFromRaw(this, R.raw.expert));
-			levels.add(LevelSet.loadLevelSetFromRaw(this, R.raw.veteran));
-			levels.addAll(LevelSet.loadAllLevelSetsFromInternalStorage(this));
-		} catch (NotFoundException e) {
-			Log.e("Not found", e.getMessage());
-		} catch (LevelLoadingException e) {
-			Log.e("Level loading issue", e.getMessage());
-		}
-		return levels;
-	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -320,7 +305,7 @@ public class LevelSetSelectActivity extends Activity {
 				}
 		} else {
 			_levelSets.clear();
-			_levelSets.addAll(loadLevels());
+			_levelSets.addAll(LevelSet.loadLevels(this));
 			if (_levelSets != null) {
 				levelList.setAdapter(new LevelSetAdapter(this,
 						R.layout.level_set_select_row, _levelSets));
