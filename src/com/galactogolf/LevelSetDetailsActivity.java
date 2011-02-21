@@ -260,26 +260,35 @@ public class LevelSetDetailsActivity extends Activity {
 					setResult(RESULT_OK, i);
 
 					finish();
-				} else if (data.getBooleanExtra(
-						UIConstants.LEVEL_SET_COMPLETED, false)) {
-					Button playButton = (Button) findViewById(R.id.level_set_details_play_button);
-					playButton.setText("Replay");
-					Button exitButton = (Button) findViewById(R.id.level_set_details_exit_button);
-					exitButton.setText("Next level");
-					exitButton.setOnClickListener(new View.OnClickListener() {
+				} else
+					
+						if (data.getBooleanExtra(
+								UIConstants.LEVEL_SET_COMPLETED, false)){
+							Button playButton = (Button) findViewById(R.id.level_set_details_play_button);
+							playButton.setText("Replay");
+							try{
+							if(_levelSet.isCompleted(thisActivity)) {
+						
+							Button exitButton = (Button) findViewById(R.id.level_set_details_exit_button);
+							exitButton.setText("Next level");
+							exitButton.setOnClickListener(new View.OnClickListener() {
 
-						public void onClick(View v) {
-							Intent i = new Intent();
-							i.putExtra(UIConstants.MOVE_TO_NEXT_LEVEL, true);
-							i.putExtra(UIConstants.CURRENT_LEVEL_ID, _levelSet
-									.getId().toString());
-							setResult(RESULT_OK, i);
+								public void onClick(View v) {
+									Intent i = new Intent();
+									i.putExtra(UIConstants.MOVE_TO_NEXT_LEVEL, true);
+									i.putExtra(UIConstants.CURRENT_LEVEL_ID, _levelSet
+											.getId().toString());
+									setResult(RESULT_OK, i);
 
-							finish();
+									finish();
+								}
+							});
+							}
+						} catch (DatabaseException e) {
+							Log.i("Exception",e.getMessage());
 						}
-					});
-
-				}
+						}
+				
 			}
 
 	
