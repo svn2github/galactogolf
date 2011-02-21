@@ -110,9 +110,7 @@ public class LevelSetDetailsActivity extends Activity {
 
 			public void onClick(View v) {
 				Intent i = new Intent();
-				i.putExtra(UIConstants.EXIT_TO_MENU, true);
-				setResult(RESULT_OK, i);
-
+	
 				finish();
 			}
 		});

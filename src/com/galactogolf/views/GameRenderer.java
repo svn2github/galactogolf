@@ -259,8 +259,8 @@ public class GameRenderer implements Renderer {
 				_world.getCameraLocation().y=(float) (_world.GetPlayer().getPosition().y+_world.GetScreenHeight()/_currentScaleFactor*0.8/2);
 			}
 			// check to see if the spaceship is not visible even if we have zoomed
-			if(_world.GetPlayer().getPosition().y>_world.getCameraLocation().y+_world.GetScreenHeight()/_currentScaleFactor*0.8/2){
-				_world.getCameraLocation().y=(float) (_world.GetPlayer().getPosition().y-_world.GetScreenHeight()/_currentScaleFactor*0.8/2);
+			if(_world.GetPlayer().getPosition().y>_world.getCameraLocation().y+_world.GetScreenHeight()/_currentScaleFactor*0.8/2-64){
+				_world.getCameraLocation().y=(float) (_world.GetPlayer().getPosition().y-_world.GetScreenHeight()/_currentScaleFactor*0.8/2+64);
 			}
 
 

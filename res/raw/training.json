@@ -226,7 +226,7 @@
         }
       ],
       "name": "Barrier & Bouncers",
- 	  "description":"Watch out for barriers! You will bounce off purple ones, but explode if you hit a green one!"
+ 	  "description":"Watch out for barriers! You will bounce off green ones, but explode if you hit a red one!"
    }
   ],
   "description": "01 - Training ",

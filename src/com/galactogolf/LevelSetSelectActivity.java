@@ -302,9 +302,11 @@ public class LevelSetSelectActivity extends Activity {
 							.getStringExtra(UIConstants.CURRENT_LEVEL_ID));
 					boolean currentLevelFound = false;
 					LevelSet nextLevel = null;
+					// loop through levels looking for the current one, then pick the next one
 					for(LevelSet levelSet : _levelSets) {
 						if(currentLevelFound) {
 							nextLevel = levelSet;
+							currentLevelFound=false;
 						}
 						if(levelSet.getId().equals(currentLevelNumber)) {
 							currentLevelFound = true;

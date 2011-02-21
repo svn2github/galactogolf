@@ -32,4 +32,5 @@ public class UIConstants {
 	public static final String LEVEL_SET_COMPLETED = "LEVEL_SET_COMPLETED";
 	protected static final String MOVE_TO_NEXT_LEVEL = "MOVE_TO_NEXT_LEVEL";
 
-	protected static final String CURRENT_LEVEL_ID = "CURRENT_LEVEL_ID";}
+	protected static final String CURRENT_LEVEL_ID = "CURRENT_LEVEL_ID";
+}
