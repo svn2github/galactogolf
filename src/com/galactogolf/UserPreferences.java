@@ -42,7 +42,7 @@ public class UserPreferences {
 		return _showFPS;
 	}
 
-	public static boolean EditorEnabled = false;
+	public static boolean EditorEnabled = true;
 
 	public static boolean MethodTracingEnabled() {
 		return false;

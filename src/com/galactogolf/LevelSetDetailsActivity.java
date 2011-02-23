@@ -251,10 +251,10 @@ public class LevelSetDetailsActivity extends Activity {
 			ListView scoreList = (ListView) findViewById(R.id.level_score_list);
 			// get the previous star score
 			int prevLevelStars = 0;
+			loadScores();
 			if(_stars!=null && _stars.size()>0){
 				prevLevelStars = _stars.get(0).bonus;
 			}
-			loadScores();
 
 			if (data != null) {
 
