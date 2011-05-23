@@ -242,9 +242,9 @@ public class GameRenderer implements Renderer {
 			
 			if (_currentScaleFactor < 0.5) {
 					_currentScaleFactor = 0.5f;
-				
-
 			}
+			
+			
 			
 			// check to see if the spaceship is not visible even if we have zoomed
 			if(_world.GetPlayer().getPosition().x<_world.getCameraLocation().x-_world.GetScreenWidth()/_currentScaleFactor*0.8/2){
@@ -299,9 +299,19 @@ public class GameRenderer implements Renderer {
 				prevLevel = ((GalactoGolfWorld) _world).getCurrentLevelNumber();
 			}
 
-			_textRenderer.drawTextInViewSpace(gl, 0, _screenHeight-40, levelMessage);
-			_textRenderer.drawTextInViewSpace(gl, 105, _screenHeight-40, parMessage);
-			_textRenderer.drawTextInViewSpace(gl, 195, _screenHeight-40, scoreMessage);
+			
+			if(_screenWidth>400) {
+				_textRenderer.drawTextInViewSpace(gl, 0, _screenHeight-40, levelMessage);
+				_textRenderer.drawTextInViewSpace(gl, 105*(_screenWidth/480.0f), _screenHeight-40, parMessage);
+				_textRenderer.drawTextInViewSpace(gl, 195*(_screenWidth/480.0f), _screenHeight-40, scoreMessage);
+			}
+			else {
+				// special code for small screens
+				_textRenderer.drawTextInViewSpace(gl, 0, _screenHeight-60, levelMessage);
+				_textRenderer.drawTextInViewSpace(gl, 105, _screenHeight-60, parMessage);
+				_textRenderer.drawTextInViewSpace(gl, 0, _screenHeight-30, scoreMessage);
+				
+			}
 			if (_showFPS) {
 				// calc moving average of FPS
 				_fps = Math
@@ -332,6 +342,7 @@ public class GameRenderer implements Renderer {
 
 		_world.SetScreenWidth(width);
 		_world.SetScreenHeight(height);
+		_world.resetCameraLocation();
 	}
 
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {

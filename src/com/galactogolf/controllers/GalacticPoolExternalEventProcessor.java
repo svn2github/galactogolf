@@ -62,9 +62,11 @@ public class GalacticPoolExternalEventProcessor extends ExternalEventProcessor {
 
 	@Override
 	public void onDown(float x, float y) {
+
+		
 		if(((GalactoGolfWorld)_world).isRunningPhysics()) {
 		// first determine if user is pressing the reset button
-		float distFromResetButton = (new Vector2D(x - 420, y - (_world.GetScreenHeight()-32)))
+		float distFromResetButton = (new Vector2D(x - (_world.GetScreenWidth()-64), y - (_world.GetScreenHeight()-32)))
 				.magnitude();
 		if (distFromResetButton < 40 && !(((GalactoGolfWorld)_world).isLevelCompleted())) {
 			reset(); // player is still playing, we need to incrememt the score
@@ -78,7 +80,7 @@ public class GalacticPoolExternalEventProcessor extends ExternalEventProcessor {
 			Vector2D pullHandleLocation = new Vector2D(_world.GetPlayer().getPosition().x,_world.GetPlayer().getPosition().y);
 
 			if (Vector2D.Sub(pullHandleLocation, _touchLocation)
-					.magnitude() < 100 * _globalScaleFactor) {
+					.magnitude() < 100 * _world.getCameraLocation().z) {
 				_touchingPlayer = true;
 				((GalactoGolfWorld) _world).setUserIsSettingPower(true);
 				((GalactoGolfWorld) _world).getProbePowerLine().getStart().x = _world
@@ -105,16 +107,16 @@ public class GalacticPoolExternalEventProcessor extends ExternalEventProcessor {
 		if (!_zooming) {
 			if (!_touchingPlayer) {
 
-				_world.setCameraScrolling(distanceX,distanceY);
+				_world.setCameraScrolling(distanceX/_world.getCameraLocation().z,distanceY/_world.getCameraLocation().z);
 
 			} else if(!((GalactoGolfWorld)_world).isRunningPhysics()){
 				// average out over two frames to smooth the input
 				float newX = ((GalactoGolfWorld) _world).getProbePowerLine()
 						.getEnd().x
-						- distanceX;
+						- distanceX/_world.getCameraLocation().z;
 				float newY = ((GalactoGolfWorld) _world).getProbePowerLine()
 						.getEnd().y
-						- distanceY;
+						- distanceY/_world.getCameraLocation().z;
 				((GalactoGolfWorld) _world).getProbePowerLine().getEnd().x = newX;
 				((GalactoGolfWorld) _world).getProbePowerLine().getEnd().y = newY;
 				((GalactoGolfPlayerEntity) _world.GetPlayer()).getVelocity().x = (((GalactoGolfWorld) _world)
@@ -151,7 +153,7 @@ public class GalacticPoolExternalEventProcessor extends ExternalEventProcessor {
 			// backwards, to account for my big fingers
 			if (powerMag > 8) {
 				powerMag = powerMag - 8;
-				float powerScale = (powerMag / 100) / _globalScaleFactor;
+				float powerScale = (powerMag / 100) / _world.getCameraLocation().z;
 				playerSpeed.x = (playerSpeed.x /playerSpeedMag) * powerScale;
 				playerSpeed.y = (playerSpeed.y /playerSpeedMag) * powerScale;
 			} else {
@@ -194,17 +196,17 @@ public class GalacticPoolExternalEventProcessor extends ExternalEventProcessor {
 	@Override
 	public void onScale(float newScaleFactor) {
 		_zooming = true;
-		_globalScaleFactor = _globalScaleFactor / newScaleFactor;
-		if (_globalScaleFactor < 0.5) {
-			_globalScaleFactor = 0.5f;
+		_world.getCameraLocation().z = _world.getCameraLocation().z * newScaleFactor;
+		if (_world.getCameraLocation().z < 0.5) {
+			_world.getCameraLocation().z = 0.5f;
 		}
-		else if(_globalScaleFactor > 2.0f) {
-			_globalScaleFactor = 2.0f;
+		else if(_world.getCameraLocation().z > 2.0f) {
+			_world.getCameraLocation().z = 2.0f;
 		}
 			
 			Vector3D currPos = _world.getCameraLocation();
 		_world.setCameraLocation(new Vector3D(currPos.x, currPos.y,
-				1 / _globalScaleFactor));
+				_world.getCameraLocation().z));
 
 		
 

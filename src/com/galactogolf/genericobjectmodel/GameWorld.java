@@ -41,7 +41,7 @@ public abstract class GameWorld {
 	protected PlayerEntity _player;
 	protected int _playerLives;
 	protected GameRenderer _renderer;
-	protected Vector3D _cameraLocation;
+	protected Vector3D _cameraLocation = new Vector3D(0.0f, 0.0f, 1.0f);
 	private int _screenHeight;
 	private int _screenWidth;
 	protected boolean _renderablesLoaded = true;
@@ -57,14 +57,22 @@ public abstract class GameWorld {
 
 	public GameWorld(GameActivity context) {
 		_playerLives = 3;
-		setCameraLocation(new Vector3D(0.0f, 0.0f, 1.0f));
 		_parentActivity = context;
 
 		_npcsToAddNextFrame = new ArrayList<NonPlayerEntity>();
 		_npcsToRemoveNextFrame = new ArrayList<NonPlayerEntity>();
 
 		_cameraVelocity = new Vector2D();
+		resetCameraLocation();
+
 	}
+	
+	public void resetCameraLocation() {
+	    this.getCameraLocation().x = 0;
+		this.getCameraLocation().y = 0;
+		this.getCameraLocation().z = 1.0f* (GetScreenHeight()/800.0f);
+	}
+
 
 	public GameRenderer GetRenderer() {
 		return _renderer;

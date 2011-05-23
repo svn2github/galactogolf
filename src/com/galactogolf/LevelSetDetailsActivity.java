@@ -95,6 +95,8 @@ public class LevelSetDetailsActivity extends Activity {
 		setContentView(R.layout.level_set_details_layout);
 		TextView levelSetTitle = (TextView) findViewById(R.id.level_set_details_name);
 		levelSetTitle.setText(_levelSet.getName());
+		TextView par = (TextView) findViewById(R.id.level_set_details_par);
+		par.setText("Par: " + _levelSet.getCoursePar());
 		Button playButton = (Button) findViewById(R.id.level_set_details_play_button);
 
 		playButton.setOnClickListener(new View.OnClickListener() {
@@ -270,19 +272,9 @@ public class LevelSetDetailsActivity extends Activity {
 				if (data.getBooleanExtra(UIConstants.LEVEL_SET_COMPLETED, false)) {
 					Button playButton = (Button) findViewById(R.id.level_set_details_play_button);
 					playButton.setText("Replay");
-					ArrayList<LevelSet> allLevels = LevelSet
-							.loadLevels(thisActivity);
-					try {
-						if (_levelSet.isCompleted(thisActivity)) {
-							TextView message = (TextView) findViewById(R.id.level_set_details_message);
-							
-							// check if we are on the last level
-							if (!allLevels.get(allLevels.size() - 1).getId()
-									.equals(_levelSet.getId())) {
-								Button exitButton = (Button) findViewById(R.id.level_set_details_exit_button);
-								exitButton.setText("Next level");
-								exitButton
-										.setOnClickListener(new View.OnClickListener() {
+					Button exitButton = (Button) findViewById(R.id.level_set_details_exit_button);
+					exitButton.setText("Next course");
+					exitButton.setOnClickListener(new View.OnClickListener() {
 
 											public void onClick(View v) {
 												Intent i = new Intent();
@@ -396,7 +388,6 @@ public class LevelSetDetailsActivity extends Activity {
 					}
 				}
 			}
-
 			return v;
 		}
 

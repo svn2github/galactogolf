@@ -22,6 +22,7 @@ import com.galactogolf.controllers.GalacticPoolEditorController;
 import com.galactogolf.controllers.GalacticPoolEditorExternalEventProcessor;
 import com.galactogolf.controllers.GalacticPoolExternalEventProcessor;
 import com.galactogolf.controllers.GameController;
+import com.galactogolf.database.DatabaseException;
 import com.galactogolf.genericobjectmodel.GameWorld;
 import com.galactogolf.genericobjectmodel.levelloader.LevelLoadingException;
 import com.galactogolf.genericobjectmodel.levelloader.LevelSavingException;
@@ -58,6 +59,7 @@ public class GameActivity extends Activity {
 	private GalactoGolfWorld _world;
 	private GameController _controller;
 	private ExternalEventProcessor _eventProcessor;
+	private LevelSet levelSet;
 
 	private Game _game;
 
@@ -100,16 +102,15 @@ public class GameActivity extends Activity {
 
 		try {
 			if (_levelSetFilename != null) {
-				LevelSet levelSet = LevelSet.loadLevelSetFromInternalStorage(
+				levelSet = LevelSet.loadLevelSetFromInternalStorage(
 						_levelSetFilename, this);
-				_world.LoadLevelSet(levelSet);
 			} else if (_levelSetResourceId != 0) {
-				LevelSet levelSet = LevelSet.loadLevelSetFromRaw(this,
+				levelSet = LevelSet.loadLevelSetFromRaw(this,
 						_levelSetResourceId);
-				_world.LoadLevelSet(levelSet);
 			} else {
-				_world.LoadLevelSet(TestLevels.GetLevelSet());
+				levelSet = TestLevels.GetLevelSet();
 			}
+			_world.LoadLevelSet(levelSet);
 
 			if (extras != null && extras.getBoolean(EDIT_LEVEL_FLAG)) {
 
@@ -222,7 +223,14 @@ public class GameActivity extends Activity {
 			}
 		} else if (requestCode == UIConstants.LEVEL_SET_COMPLETED_ACTIVITY) {
 			Intent i = new Intent();
-			i.putExtra(UIConstants.LEVEL_SET_COMPLETED, true);
+			try {
+				if(this.levelSet.isCompleted(this)) {
+				i.putExtra(UIConstants.LEVEL_SET_COMPLETED, true);
+				}
+			} catch (DatabaseException e) {
+				Log.e("Galacto Golf", e.getMessage());
+				
+			}
 			setResult(RESULT_OK, i);
 			finish();
 		}

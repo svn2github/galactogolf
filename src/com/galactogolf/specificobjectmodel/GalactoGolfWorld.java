@@ -132,11 +132,12 @@ public class GalactoGolfWorld extends GameWorld {
 			}
 
 		}
-		this.getCameraLocation().x = 0;
-		this.getCameraLocation().y = 0;
-		this.getCameraLocation().z = 1.0f;
+		
+		
+		
 
 	}
+	
 
 	public boolean userIsSettingPower() {
 		return _userIsSettingPower;
@@ -463,8 +464,7 @@ public class GalactoGolfWorld extends GameWorld {
 				this.getCameraLocation().x = 0.0f;
 				this.getCameraLocation().y = 0.0f;
 			}
-			this.getCameraLocation().z = 1.0f;
-
+            this.resetCameraLocation();
 		} catch (LevelLoadingException e) {
 			Log.e("Exception", e.getMessage());
 		}

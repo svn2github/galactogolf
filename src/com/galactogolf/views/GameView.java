@@ -40,7 +40,6 @@ public class GameView extends GLSurfaceView implements OnTouchListener {
 	private GestureDetector gestureScanner;
 	private GameGestureListener gameGestureListener;
 
-	private float _globalScaleFactor = 1.0f;
 
 	private Context _context;
 

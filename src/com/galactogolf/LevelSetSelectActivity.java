@@ -86,7 +86,7 @@ public class LevelSetSelectActivity extends Activity {
 					long id) {
 				LevelSet levelSet = _levelSets.get((int) id);
 				LevelSet prevLevelSet = null;
-				if (id >= 2) {
+				if (id >= 1) {
 					prevLevelSet = _levelSets.get((int) id - 1);
 				}
 				try {

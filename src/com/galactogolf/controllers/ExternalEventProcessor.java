@@ -33,7 +33,6 @@ import com.galactogolf.genericobjectmodel.Vector3D;
 public abstract class ExternalEventProcessor {
 	protected GameWorld _world;
 	private BlockingQueue<ExternalGameEvent> _eventQueue;
-	protected float _globalScaleFactor = 1.0f;
 
 	public ExternalEventProcessor(GameWorld world) {
 		_world = world;
@@ -93,9 +92,9 @@ public abstract class ExternalEventProcessor {
 		Vector3D camLocation = _world.getCameraLocation();
 		return new Vector2D(camLocation.x
 				- (_world.GetRenderer().GetScreenWidth() / 2)
-				* _globalScaleFactor + x * _globalScaleFactor, camLocation.y
+				/ _world.getCameraLocation().z + x / _world.getCameraLocation().z, camLocation.y
 				- (_world.GetRenderer().GetScreenHeight() / 2)
-				* _globalScaleFactor + y * _globalScaleFactor);
+				/ _world.getCameraLocation().z + y / _world.getCameraLocation().z);
 	}
 
 	abstract public void onScroll(float x, float y);

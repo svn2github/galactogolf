@@ -6,17 +6,22 @@
     android:tileMode="repeat"
     android:dither="true">
 
-<ImageView android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/logo" android:layout_weight="1"></ImageView>
-<TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1"  android:layout_marginTop="0px" android:layout_marginLeft="10px" android:layout_marginRight="10px" android:layout_marginBottom="100px" >
-<TableRow android:id="@+id/TableRow01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1">
-<Button android:layout_height="wrap_content" android:id="@+id/SelectLevelButton" android:text="@string/select_level_button_text" android:layout_width="200px" android:textSize="7pt" android:background="@drawable/selector" android:layout_weight="1" android:layout_margin="10px" android:typeface="sans"></Button>
-<Button android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/main_menu_preferences_button"  android:textSize="7pt"  android:id="@+id/PreferencesButton" android:background="@drawable/selector" android:layout_weight="1" android:layout_margin="10px" android:typeface="sans"></Button>
+<ImageView android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/logo" android:layout_weight="1"></ImageView>
+<TextView android:text=" " android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"></TextView>
+<TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1"  android:layout_marginTop="0px" android:layout_marginLeft="10px" android:layout_marginRight="10px" android:layout_marginBottom="100px" >
+<TableRow android:id="@+id/TableRow01" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<Button android:layout_height="fill_parent" android:id="@+id/SelectLevelButton"
+	android:text="@string/select_level_button_text" android:layout_width="200px"
+	android:textSize="7pt" android:background="@drawable/selector"
+	android:layout_weight="1" android:layout_margin="5px" android:typeface="sans"></Button>
+<Button android:layout_height="fill_parent" android:layout_width="fill_parent" android:text="@string/main_menu_preferences_button"  android:textSize="7pt"  android:id="@+id/PreferencesButton" android:background="@drawable/selector" android:layout_weight="1" android:layout_margin="5px" android:typeface="sans"></Button>
 </TableRow>
-<TableRow android:id="@+id/TableRow01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1">
-<Button android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/main_menu_how_to_play_button" android:id="@+id/HowToPlayButton"  android:textSize="7pt"  android:background="@drawable/selector" android:layout_weight="1" android:layout_margin="10px" android:typeface="sans"></Button>
-<Button android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/main_menu_exit_button" android:id="@+id/ExitButton"  android:textSize="7pt"  android:background="@drawable/selector" android:layout_weight="1" android:layout_margin="10px" android:typeface="sans"></Button>
+<TableRow android:id="@+id/TableRow01" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<Button android:layout_height="fill_parent" android:layout_width="fill_parent" android:text="@string/main_menu_how_to_play_button" android:id="@+id/HowToPlayButton"  android:textSize="7pt"  android:background="@drawable/selector" android:layout_weight="1" android:layout_margin="5px" android:typeface="sans"></Button>
+<Button android:layout_height="fill_parent" android:layout_width="fill_parent" android:text="@string/main_menu_exit_button" android:id="@+id/ExitButton"  android:textSize="7pt"  android:background="@drawable/selector" android:layout_weight="1" android:layout_margin="5px" android:typeface="sans"></Button>
 </TableRow>
 </TableLayout>
+
 
 
 </LinearLayout>

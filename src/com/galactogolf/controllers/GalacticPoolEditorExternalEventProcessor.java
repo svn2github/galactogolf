@@ -81,7 +81,7 @@ public class GalacticPoolEditorExternalEventProcessor extends ExternalEventProce
 					Log.e("onDown - Collision exception", "the entity had no collision mode");
 				}
 				// are we within touching distance and are we closer than any other object?
-				if (distFromTouchLocation < 50/_globalScaleFactor && distFromTouchLocation<lastTouchDist) {
+				if (distFromTouchLocation < 50/_world.getCameraLocation().z && distFromTouchLocation<lastTouchDist) {
 					_touchingEntity = npc;
 					_isTouching=true;
 					((GalactoGolfWorld)_world).setSelectedEntity(_touchingEntity);
@@ -94,7 +94,7 @@ public class GalacticPoolEditorExternalEventProcessor extends ExternalEventProce
 		
 		float distFromTouchLocation = Vector2D.Sub(_world.GetPlayer().getPosition(),_touchLocation).magnitude() ;
 		// are we within touching distance and are we closer than any other object?
-		if (distFromTouchLocation < 50/_globalScaleFactor && distFromTouchLocation<lastTouchDist) {
+		if (distFromTouchLocation < 50/_world.getCameraLocation().z && distFromTouchLocation<lastTouchDist) {
 			_touchingEntity = _world.GetPlayer();
 			_isTouching=true;
 			((GalactoGolfWorld)_world).setSelectedEntity(_touchingEntity);
@@ -285,9 +285,9 @@ public class GalacticPoolEditorExternalEventProcessor extends ExternalEventProce
 	@Override
 	public void onScale(float newScaleFactor) {
 			/*_zooming = true;
-			_globalScaleFactor = _globalScaleFactor / newScaleFactor; 
+			_world.getCameraLocation().z = _world.getCameraLocation().z / newScaleFactor; 
 			Vector3D currPos = _world.getCameraLocation();
-				_world.setCameraLocation(new Vector3D(currPos.x,currPos.y, 1/_globalScaleFactor ));
+				_world.setCameraLocation(new Vector3D(currPos.x,currPos.y, 1/_world.getCameraLocation().z ));
 	*/
 	}
 	
